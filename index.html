@@ -3,131 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organização Semanal</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Controle Semanal</title>
 </head>
 <body>
+    <div class="container mt-5">
+        <h1 class="text-center">Controle Semanal</h1>
 
-<div class="container mt-5">
-    <h1 class="text-center">Organização Semanal</h1>
-    <form id="organizeForm">
-        <div class="form-group">
-            <label for="date">Data:</label>
-            <input type="date" class="form-control" id="date" required>
-        </div>
-        <div class="form-group">
-            <label for="dayOfWeek">Dia da Semana:</label>
-            <input type="text" class="form-control" id="dayOfWeek" readonly>
-        </div>
-
-        <!-- Campos para cadastro -->
-        <div class="form-group">
-            <label for="people">Pessoas:</label>
-            <select id="people" class="form-control" required>
-                <option value="" disabled selected>Selecione uma pessoa</option>
-            </select>
-            <button type="button" class="btn btn-link" id="addPersonBtn">Cadastrar Nova Pessoa</button>
-            <div id="newPersonContainer" class="d-none mt-2">
-                <input type="text" class="form-control" id="newPerson" placeholder="Nova Pessoa">
-                <button type="button" class="btn btn-success mt-1" id="saveNewPersonBtn">Salvar</button>
-                <button type="button" class="btn btn-danger mt-1" id="removePersonBtn">Remover</button>
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Entradas da Semana</h2>
+            </div>
+            <div class="card-body">
+                <form id="cadastroForm">
+                    <div class="form-group">
+                        <label for="nomePessoa">Equipe</label>
+                        <input type="text" class="form-control" id="nomePessoa" placeholder="Informe a equipe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estabelecimento">Estabelecimento</label>
+                        <input type="text" class="form-control" id="estabelecimento" placeholder="Informe o estabelecimento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" placeholder="Informe a cidade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" class="form-control" id="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pauta">Pauta</label>
+                        <input type="text" class="form-control" id="pauta" placeholder="Informe a pauta" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="alimentacao">Alimentação</label>
+                            <input type="number" class="form-control" id="alimentacao" step="0.01" placeholder="Ex: 100,00" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="uber">Uber</label>
+                            <input type="number" class="form-control" id="uber" step="0.01" placeholder="Ex: 100,00" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="combustivel">Combustível</label>
+                            <input type="number" class="form-control" id="combustivel" step="0.01" placeholder="Ex: 100,00" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="hospedagem">Hospedagem</label>
+                            <input type="number" class="form-control" id="hospedagem" step="0.01" placeholder="Ex: 100,00" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Adicionar Entrada</button>
+                </form>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="place">Estabelecimento:</label>
-            <select id="place" class="form-control" required>
-                <option value="" disabled selected>Selecione um estabelecimento</option>
-            </select>
-            <button type="button" class="btn btn-link" id="addPlaceBtn">Cadastrar Novo Estabelecimento</button>
-            <div id="newPlaceContainer" class="d-none mt-2">
-                <input type="text" class="form-control" id="newPlace" placeholder="Novo Estabelecimento">
-                <button type="button" class="btn btn-success mt-1" id="saveNewPlaceBtn">Salvar</button>
-                <button type="button" class="btn btn-danger mt-1" id="removePlaceBtn">Remover</button>
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Histórico</h2>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label for="city">Cidade:</label>
-            <select id="city" class="form-control" required>
-                <option value="" disabled selected>Selecione uma cidade</option>
-                <option value="Alegrete">Alegrete</option>
-                <option value="Alvorada">Alvorada</option>
-                <option value="Antônio Prado">Antônio Prado</option>
-                <option value="Arambará">Arambará</option>
-                <option value="Bagé">Bagé</option>
-                <option value="Bento Gonçalves">Bento Gonçalves</option>
-                <option value="Camaquã">Camaquã</option>
-                <option value="Caxias do Sul">Caxias do Sul</option>
-                <option value="Farroupilha">Farroupilha</option>
-                <option value="Pelotas">Pelotas</option>
-                <option value="Porto Alegre">Porto Alegre</option>
-                <option value="Rio Grande">Rio Grande</option>
-                <option value="Santa Maria">Santa Maria</option>
-                <option value="São Leopoldo">São Leopoldo</option>
-                <option value="Viamão">Viamão</option>
-            </select>
-            <button type="button" class="btn btn-link" id="addCityBtn">Cadastrar Nova Cidade</button>
-            <div id="newCityContainer" class="d-none mt-2">
-                <input type="text" class="form-control" id="newCity" placeholder="Nova Cidade">
-                <button type="button" class="btn btn-success mt-1" id="saveNewCityBtn">Salvar</button>
-                <button type="button" class="btn btn-danger mt-1" id="removeCityBtn">Remover</button>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="mesSelecionado">Selecionar Mês</label>
+                    <select class="form-control" id="mesSelecionado"></select>
+                </div>
+                <div id="blocoHistorico"></div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label for="topic">Pauta:</label>
-            <input type="text" class="form-control" id="topic" required>
-        </div>
-        <div class="form-group">
-            <label for="food">Valor de Alimentação (R$):</label>
-            <input type="number" class="form-control" id="food" required>
-        </div>
-        <div class="form-group">
-            <label for="uber">Valor de Uber (R$):</label>
-            <input type="number" class="form-control" id="uber" required>
-        </div>
-        <div class="form-group">
-            <label for="fuel">Valor de Combustível (R$):</label>
-            <input type="number" class="form-control" id="fuel" required>
-        </div>
-        <div class="form-group">
-            <label for="lodging">Valor de Hospedagem (R$):</label>
-            <input type="number" class="form-control" id="lodging" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Adicionar Semana</button>
-        <button type="button" id="toggleHistoryBtn" class="btn btn-secondary ml-2">Mostrar Histórico</button>
-    </form>
-
-    <div id="historyContainer" class="d-none mt-4">
-        <h2 class="text-center">Histórico Semanal</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered table-sm">
-                <thead class="table-light">
-                    <tr>
-                        <th scope="col">Data</th>
-                        <th scope="col">Dia da Semana</th>
-                        <th scope="col">Pessoas</th>
-                        <th scope="col">Estabelecimento</th>
-                        <th scope="col">Cidade</th>
-                        <th scope="col">Pauta</th>
-                        <th scope="col">Alimentação</th>
-                        <th scope="col">Uber</th>
-                        <th scope="col">Combustível</th>
-                        <th scope="col">Hospedagem</th>
-                        <th scope="col">Saldo Total</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="history">
-                    <!-- O histórico vai ser inserido aqui -->
-                </tbody>
-            </table>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

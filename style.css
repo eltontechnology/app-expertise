@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f9fa; /* Fundo leve para contraste */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para os cards */
+}
+
+.historico-bloco {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #ffffff; /* Fundo branco para os blocos do histórico */
+}
+
+.mes-bloco {
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-top: 10px; /* Espaçamento superior para botões */
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
