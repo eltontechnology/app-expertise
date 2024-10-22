@@ -4,16 +4,23 @@ body {
     margin: auto;
     margin-bottom: 50px;
 }
-
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vh;
+    border-radius: 100px;
+}
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para os cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil para os cards */
 }
 .card-header{
-   background-color:  hsla(296, 77%, 83%, 0.253);
+    color:#ffffff;
+    background-color:  hsla(313, 88%, 46%, 0.808);
 }
 
 .historico-bloco {
-    border: 1px solid #007bff;
+    border: 1px solid #c146cc;
     border-radius: 5px;
     padding: 15px;
     margin: 10px 0;
@@ -27,6 +34,11 @@ body {
 .btn {
     margin-top: 10px; /* Espaçamento superior para botões */
 }
+.btn-primary{
+    background-color: #be5195;
+    color: white;
+    border: none;
+}
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
     
@@ -37,8 +49,7 @@ input[type=number] {
 
 }
 h1{
-    text-align: center;
-    color: #343a40; /* Cor do título */
+    margin-top: 30px;
 }
 footer p{
     color: rgb(0, 0, 0);
