@@ -17,6 +17,8 @@ body {
 .card-header {
     color: #ffffff;
     background-color: hsla(313, 88%, 46%, 0.808);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 .historico-bloco {
     border: 1px solid #c146cc;
@@ -24,6 +26,17 @@ body {
     padding: 15px;
     margin: 10px 0;
     background-color: #ffffff; /* Fundo branco para os blocos do histórico */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+p{
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+}
+input{
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+}
+label{
+
+    font-size: larger;
 }
 .mes-bloco {
     margin-bottom: 20px;
@@ -48,9 +61,26 @@ input[type=number] {
 }
 h1 {
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
-footer p {
+h2{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+hr{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#hr_despesas{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+footer h6 {
     color: rgb(0, 0, 0);
     text-align: center;
     font-size: 0.8rem;

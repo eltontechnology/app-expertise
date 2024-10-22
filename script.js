@@ -97,7 +97,7 @@ function renderHistorico() {
             const bloco = document.createElement('div');
             bloco.classList.add('historico-bloco');
             bloco.innerHTML = `
-                <h5><strong>💪 Equipe: </strong> ${entry.nomePessoa}<br>(${entry.diaDaSemana}) - ${formatDate(entry.data)}</h5>
+                <h5><strong>💪 Equipe: </strong> ${entry.nomePessoa}<br>(${entry.diaDaSemana}) - ${formatDate(entry.data)}</h5><hr>
                 <p><strong>🏢 Estabelecimento:</strong> ${entry.estabelecimento}</p>
                 <p><strong>📍 Cidade:</strong> ${entry.cidade}</p>
                 <p><strong>📋 Pauta:</strong> ${entry.pauta}</p>
