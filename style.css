@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f9fa; /* Fundo leve para contraste */
+    background-color: #d78ddd; /* Fundo leve para contraste */
     width: 80%;
     margin: auto;
     margin-bottom: 50px;
@@ -7,6 +7,9 @@ body {
 
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para os cards */
+}
+.card-header{
+   background-color:  hsla(296, 77%, 83%, 0.253);
 }
 
 .historico-bloco {
