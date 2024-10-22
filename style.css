@@ -1,24 +1,23 @@
 body {
     background-color: #d78ddd; /* Fundo leve para contraste */
-    width: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: auto;
     margin-bottom: 50px;
 }
-#logo{
+#logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30vh;
+    width: 20vh;
     border-radius: 100px;
 }
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil para os cards */
 }
-.card-header{
-    color:#ffffff;
-    background-color:  hsla(313, 88%, 46%, 0.808);
+.card-header {
+    color: #ffffff;
+    background-color: hsla(313, 88%, 46%, 0.808);
 }
-
 .historico-bloco {
     border: 1px solid #c146cc;
     border-radius: 5px;
@@ -26,47 +25,45 @@ body {
     margin: 10px 0;
     background-color: #ffffff; /* Fundo branco para os blocos do histórico */
 }
-
 .mes-bloco {
     margin-bottom: 20px;
 }
-
 .btn {
     margin-top: 10px; /* Espaçamento superior para botões */
 }
-.btn-primary{
+.btn-primary {
     background-color: #be5195;
     color: white;
     border: none;
 }
-input[type=number]::-webkit-inner-spin-button { 
+.btn-primary:hover{
+    background-color: #a8376e;
+}
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    
 }
-input[type=number] { 
-   -moz-appearance: textfield;
-   appearance: textfield;
-
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
-h1{
+h1 {
     margin-top: 30px;
+    margin-left: 30px;
 }
-footer p{
+footer p {
     color: rgb(0, 0, 0);
     text-align: center;
-    font-style: bold;
     font-size: 0.8rem;
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
 }
-footer a{
-    
+footer a {
     color: rgb(134, 117, 209);
     text-decoration: none;
     font-style: italic;
 }
-footer a:hover{
+footer a:hover {
     color: rgb(112, 82, 245);
     text-decoration: none;
 }

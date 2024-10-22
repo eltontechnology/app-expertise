@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addEntry(event) {
-    event.preventDefault();
+    event.preventDefault(); // Impede o comportamento padrão do formulário
 
+    // Obter valores do formulário
     const nomePessoa = document.getElementById('nomePessoa').value;
     const estabelecimento = document.getElementById('estabelecimento').value;
     const cidade = document.getElementById('cidade').value;
@@ -20,12 +21,13 @@ function addEntry(event) {
 
     const total = alimentacao + uber + combustivel + hospedagem;
 
+    // Criar entrada
     const entry = {
         id: Date.now(),
         nomePessoa,
         estabelecimento,
         cidade,
-        data,
+        data: formatDateForStorage(data),
         pauta,
         alimentacao,
         uber,
@@ -35,9 +37,9 @@ function addEntry(event) {
         diaDaSemana: getDiaDaSemana(data)
     };
 
-    saveEntry(entry);
-    clearForm();
-    renderHistorico(); // Atualiza a visualização do histórico
+    saveEntry(entry); // Salvar entrada
+    clearForm(); // Limpar formulário
+    renderHistorico(); // Atualiza o histórico
 }
 
 function saveEntry(entry) {
@@ -63,19 +65,15 @@ function populateMonthSelector() {
     }
 }
 
-function getDiaDaSemana(dataString) {
-    const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-    const dateParts = dataString.split('-'); // 'YYYY-MM-DD'
-    const year = parseInt(dateParts[0]);
-    const month = parseInt(dateParts[1]) - 1; // Mês começa em 0
-    const day = parseInt(dateParts[2]);
-    const date = new Date(Date.UTC(year, month, day)); // Usando UTC para evitar problemas de fuso horário
-    return diasDaSemana[date.getUTCDay()]; // Obtem o dia da semana em UTC
+function formatDateForStorage(dataString) {
+    const date = new Date(dataString + 'T00:00:00-03:00'); // Ajusta para UTC-3
+    return date.toISOString().split('T')[0]; // Armazena apenas a data no formato YYYY-MM-DD
 }
 
-function formatDate(dateString) {
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    return new Date(dateString).toLocaleDateString('pt-BR', options);
+function getDiaDaSemana(dataString) {
+    const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+    const date = new Date(dataString + 'T00:00:00-03:00'); // Ajusta para UTC-3
+    return diasDaSemana[date.getDay()];
 }
 
 function renderHistorico() {
@@ -99,15 +97,15 @@ function renderHistorico() {
             const bloco = document.createElement('div');
             bloco.classList.add('historico-bloco');
             bloco.innerHTML = `
-                <h5><strong>Equipe: </strong> ${entry.nomePessoa}<br>(${entry.diaDaSemana}) - ${formatDate(entry.data)}</h5>
-                <p><strong>Estabelecimento:</strong> ${entry.estabelecimento}</p>
-                <p><strong>Cidade:</strong> ${entry.cidade}</p>
-                <p><strong>Pauta:</strong> ${entry.pauta}</p>
-                <p><strong>Alimentação:</strong> R$ ${entry.alimentacao.toFixed(2)}</p>
-                <p><strong>Uber:</strong> R$ ${entry.uber.toFixed(2)}</p>
-                <p><strong>Combustível:</strong> R$ ${entry.combustivel.toFixed(2)}</p>
-                <p><strong>Hospedagem:</strong> R$ ${entry.hospedagem.toFixed(2)}</p>
-                <p><strong>Total de Gastos:</strong> R$ ${entry.total.toFixed(2)}</p>
+                <h5><strong>💪 Equipe: </strong> ${entry.nomePessoa}<br>(${entry.diaDaSemana}) - ${formatDate(entry.data)}</h5>
+                <p><strong>🏢 Estabelecimento:</strong> ${entry.estabelecimento}</p>
+                <p><strong>📍 Cidade:</strong> ${entry.cidade}</p>
+                <p><strong>📋 Pauta:</strong> ${entry.pauta}</p>
+                <p><strong>🍝 Alimentação:</strong> R$ ${entry.alimentacao.toFixed(2)}</p>
+                <p><strong>🚗 Uber:</strong> R$ ${entry.uber.toFixed(2)}</p>
+                <p><strong>⛽ Combustível:</strong> R$ ${entry.combustivel.toFixed(2)}</p>
+                <p><strong>🏨 Hospedagem:</strong> R$ ${entry.hospedagem.toFixed(2)}</p>
+                <p><strong>💸 Total de Gastos:</strong> R$ ${entry.total.toFixed(2)}</p>
                 <button class="btn btn-warning btn-sm" onclick="editEntry(${entry.id})"> ✏️ Editar</button>
                 <button class="btn btn-danger btn-sm" onclick="deleteEntry(${entry.id})"> 🗑️ Excluir</button>
             `;
@@ -131,7 +129,7 @@ function editEntry(id) {
     document.getElementById('nomePessoa').value = entry.nomePessoa;
     document.getElementById('estabelecimento').value = entry.estabelecimento;
     document.getElementById('cidade').value = entry.cidade;
-    document.getElementById('data').value = entry.data;
+    document.getElementById('data').value = entry.data; // Mantém o formato correto
     document.getElementById('pauta').value = entry.pauta;
     document.getElementById('alimentacao').value = entry.alimentacao;
     document.getElementById('uber').value = entry.uber;
@@ -148,3 +146,7 @@ function deleteEntry(id) {
     renderHistorico(); // Atualiza o histórico após exclusão
 }
 
+function formatDate(dateString) {
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return new Date(dateString + 'T00:00:00-03:00').toLocaleDateString('pt-BR', options);
+}
