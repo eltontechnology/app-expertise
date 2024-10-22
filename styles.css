@@ -1,0 +1,17 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.table-responsive {
+    overflow-x: hidden; /* Remove rolagem horizontal */
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+    .table {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte em telas menores */
+    }
+}
