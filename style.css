@@ -1,5 +1,8 @@
 body {
     background-color: #f8f9fa; /* Fundo leve para contraste */
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 .card {
@@ -21,7 +24,6 @@ body {
 .btn {
     margin-top: 10px; /* Espaçamento superior para botões */
 }
-
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
     
@@ -34,4 +36,23 @@ input[type=number] {
 h1{
     text-align: center;
     color: #343a40; /* Cor do título */
+}
+footer p{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-style: bold;
+    font-size: 0.8rem;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+footer a{
+    
+    color: rgb(134, 117, 209);
+    text-decoration: none;
+    font-style: italic;
+}
+footer a:hover{
+    color: rgb(112, 82, 245);
+    text-decoration: none;
 }

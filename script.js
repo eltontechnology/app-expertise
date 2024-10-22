@@ -108,8 +108,8 @@ function renderHistorico() {
                 <p><strong>Combustível:</strong> R$ ${entry.combustivel.toFixed(2)}</p>
                 <p><strong>Hospedagem:</strong> R$ ${entry.hospedagem.toFixed(2)}</p>
                 <p><strong>Total de Gastos:</strong> R$ ${entry.total.toFixed(2)}</p>
-                <button class="btn btn-warning btn-sm" onclick="editEntry(${entry.id})">Editar</button>
-                <button class="btn btn-danger btn-sm" onclick="deleteEntry(${entry.id})">Excluir</button>
+                <button class="btn btn-warning btn-sm" onclick="editEntry(${entry.id})"> ✏️ Editar</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteEntry(${entry.id})"> 🗑️ Excluir</button>
             `;
             mesDiv.appendChild(bloco);
         });
