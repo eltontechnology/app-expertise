@@ -94,12 +94,12 @@ function renderHistorico() {
     if (filteredEntries.length > 0) {
         const mesDiv = document.createElement('div');
         mesDiv.classList.add('mes-bloco');
-        
+
         filteredEntries.forEach(entry => {
             const bloco = document.createElement('div');
             bloco.classList.add('historico-bloco');
             bloco.innerHTML = `
-                <h5>${entry.nomePessoa} - ${formatDate(entry.data)} (${entry.diaDaSemana})</h5>
+                <h5><strong>Equipe: </strong> ${entry.nomePessoa}<br>(${entry.diaDaSemana}) - ${formatDate(entry.data)}</h5>
                 <p><strong>Estabelecimento:</strong> ${entry.estabelecimento}</p>
                 <p><strong>Cidade:</strong> ${entry.cidade}</p>
                 <p><strong>Pauta:</strong> ${entry.pauta}</p>

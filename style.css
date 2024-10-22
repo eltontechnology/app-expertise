@@ -31,3 +31,7 @@ input[type=number] {
    appearance: textfield;
 
 }
+h1{
+    text-align: center;
+    color: #343a40; /* Cor do título */
+}
